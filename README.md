@@ -38,9 +38,9 @@ A Monorepo B2B SaaS starter template for AI-powered microservices.
 |-------------|----------------------------|--------------------------|  
 | Frontend    | Next.js 14, Tailwind, ShadCN | Fully implemented       |
 | CMS         | Directus (Docker)          | Container setup complete, content integration in progress |
-| Auth        | Clerk (fallback: NextAuth) | Fully implemented       |
+| Auth        | Clerk (fallback: NextAuth) | Fully implemented, API validation in progress |
 | API         | Express + tRPC + Zod       | Fully implemented       |
-| DB          | Neon + Drizzle ORM         | Fully implemented       |
+| DB          | Neon + Drizzle ORM         | Basic setup complete, schema and migrations needed |
 | Async/Queue | Upstash Workflow + QStash  | Framework setup, implementation in progress |
 | Emails      | Resend                     | Implemented with dev mode |
 | API Docs    | Scalar + zod-to-openapi    | Fully implemented       |
@@ -99,6 +99,8 @@ The Directus CMS runs in a Docker container locally for development. When you ru
 > **Note**: While the Directus container is fully functional, the integration with blog and marketing pages is still in progress. The frontend currently uses mock data for these sections.
 
 ### Current Implementation Status
+
+For a detailed list of planned improvements and remaining work items, please see our [TODO.md](/TODO.md) file.
 
 #### Blog and Marketing Pages
 - The blog currently uses hardcoded mock data
