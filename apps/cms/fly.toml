@@ -1,0 +1,26 @@
+app = "saas-starter-cms"
+primary_region = "syd"  # Change to your preferred region
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8055
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[mounts]
+  source = "directus_data"
+  destination = "/directus/uploads"
+
+[env]
+  PORT = "8055"
+  NODE_ENV = "production"
+  CORS_ENABLED = "true"
+  PUBLIC_URL = "https://saas-starter-cms.fly.dev"
+
+# For production, you'll want to set these as secrets using the Fly CLI
+# fly secrets set DB_HOST=your-neon-host.neon.tech DB_PORT=5432 DB_DATABASE=your-database DB_USER=your-username DB_PASSWORD=your-password

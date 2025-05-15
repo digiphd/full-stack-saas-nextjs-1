@@ -1,0 +1,35 @@
+{
+  "name": "@saas-starter/workflows",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node src/dev-server.ts",
+    "workflow": "ts-node src/workflow-api.ts",
+    "test-qstash": "ts-node src/test-qstash.ts",
+    "workflow-example": "ts-node src/upstash-workflow-example.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:workflow": "ts-node src/test-workflow.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@upstash/qstash": "^2.1.0",
+    "@upstash/redis": "^1.22.0",
+    "@upstash/workflow": "^0.2.13",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "resend": "^1.1.0",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^4.17.21",
+    "@types/node": "^18.19.100",
+    "eslint": "^8.40.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

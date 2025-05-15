@@ -1,0 +1,24 @@
+{
+  "name": "@saas-starter/types",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "npx tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint src/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "eslint": "^8.40.0",
+    "tsup": "^7.3.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "zod": "^3.22.2",
+    "@asteasolutions/zod-to-openapi": "^7.3.0"
+  }
+}

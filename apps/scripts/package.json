@@ -1,0 +1,17 @@
+{
+  "name": "@saas-starter/scripts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "generate:openapi": "node generate-openapi.js",
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {
+    "@saas-starter/types": "workspace:*",
+    "@asteasolutions/zod-to-openapi": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "typescript": "^5.2.2"
+  }
+}

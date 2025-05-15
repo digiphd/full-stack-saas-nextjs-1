@@ -1,0 +1,8 @@
+{
+  "security": {
+    "basic": {
+      "username": "admin",
+      "password": "saas-starter"
+    }
+  }
+}

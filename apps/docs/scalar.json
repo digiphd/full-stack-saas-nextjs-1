@@ -1,0 +1,40 @@
+{
+  "openapi": "./openapi.json",
+  "security": {
+    "basic": {
+      "username": "admin",
+      "password": "saas-starter"
+    }
+  },
+  "theme": {
+    "colors": {
+      "primary": {
+        "main": "#3b82f6"
+      }
+    },
+    "sidebar": {
+      "width": "300px"
+    }
+  },
+  "metadata": {
+    "title": "SaaS Starter API Documentation",
+    "description": "API documentation for the SaaS Starter Kit",
+    "favicon": "/favicon.ico"
+  },
+  "logo": {
+    "text": "SaaS Starter API",
+    "altText": "SaaS Starter Logo"
+  },
+  "navbar": {
+    "links": [
+      {
+        "name": "Dashboard",
+        "url": "http://localhost:3000/dashboard"
+      },
+      {
+        "name": "Website",
+        "url": "http://localhost:3000"
+      }
+    ]
+  }
+}

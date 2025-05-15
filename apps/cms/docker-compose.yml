@@ -1,0 +1,41 @@
+version: '3'
+services:
+  directus:
+    image: directus/directus:latest
+    ports:
+      - "8055:8055"
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+      - ./database:/directus/database
+    environment:
+      KEY: '255d861b-5ea1-5996-9aa3-922530ec40b1'
+      SECRET: '6116487b-cda1-52c2-b5b5-c8022c45e263'
+      
+      # Database Config
+      DB_CLIENT: 'sqlite3'
+      DB_FILENAME: '/directus/database/data.db'
+      
+      # Admin User
+      ADMIN_EMAIL: 'admin@example.com'
+      ADMIN_PASSWORD: 'test'
+      
+      # Enable development mode for easier testing
+      NODE_ENV: 'development'
+      
+      # CORS settings to allow API requests from frontend
+      CORS_ENABLED: 'true'
+      CORS_ORIGIN: 'http://localhost:3000,http://localhost:3005'
+      
+      # Public URL for the CMS
+      PUBLIC_URL: 'http://localhost:8055'
+  
+  # You can add a database service here if you want to use PostgreSQL instead of SQLite
+  # postgres:
+  #   image: postgres:14
+  #   volumes:
+  #     - ./data/postgres:/var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_USER: directus
+  #     POSTGRES_PASSWORD: directus
+  #     POSTGRES_DB: directus

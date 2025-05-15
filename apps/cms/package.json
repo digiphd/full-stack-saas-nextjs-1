@@ -1,0 +1,17 @@
+{
+  "name": "@saas-starter/cms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/check-docker.js && docker-compose up || echo 'Continuing without CMS...' && exit 0",
+    "bootstrap": "node scripts/bootstrap.js",
+    "build": "echo 'No build step for Directus CMS'",
+    "start": "node scripts/check-docker.js && docker-compose up -d || echo 'Cannot start CMS: Docker not running' && exit 0",
+    "stop": "docker-compose down || echo 'No CMS running to stop'",
+    "clean": "(docker-compose down -v || echo 'No Docker containers to clean') && rm -rf uploads extensions database"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^18.16.0"
+  }
+}
