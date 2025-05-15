@@ -133,6 +133,14 @@ After CMS updates, trigger revalidation (once CMS integration is complete):
 curl -X POST https://app.yourdomain.com/api/revalidate?secret=your_secret&path=/blog/your-post-slug
 ```
 
+## 👥 Contributing
+
+Contributions to this project are managed through a controlled process. Please read our [CONTRIBUTING.md](/CONTRIBUTING.md) file for details on how to request access to contribute.
+
 ## 📝 License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
+
+## ⚠️ Disclaimer
+
+This software is provided "as is", without warranty of any kind, express or implied. The authors or copyright holders shall not be liable for any claim, damages or other liability arising from the use of the software. No support or maintenance will be provided for this template.
