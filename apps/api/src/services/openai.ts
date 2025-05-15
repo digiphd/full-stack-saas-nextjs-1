@@ -129,17 +129,20 @@ Return only the JSON array with no additional text.
     const content = response.choices[0]?.message?.content?.trim() || '';
     console.log('OpenAI response content:', content.substring(0, 100) + '...');
     
-    // Extract JSON from the response
-    const jsonMatch = content.match(/\[\s*\{.*\}\s*\]/s);
-    if (!jsonMatch) {
+    // Parse and validate JSON from the response
+    let ideas: BusinessIdea[];
+    try {
+      const parsedContent = JSON.parse(content);
+      if (!Array.isArray(parsedContent) || !parsedContent.every(item => typeof item === 'object')) {
+        throw new Error('Parsed content is not a valid array of objects');
+      }
+      ideas = parsedContent as BusinessIdea[];
+    } catch (parseError) {
       console.error('Failed to parse JSON from OpenAI response. Full content:', content);
-      throw new Error('Failed to parse JSON from OpenAI response');
+      throw new Error('Failed to parse JSON from OpenAI response: ' + parseError.message);
     }
     
-    console.log('Successfully extracted JSON from OpenAI response');
-    
-    const jsonStr = jsonMatch[0];
-    const ideas = JSON.parse(jsonStr) as BusinessIdea[];
+    console.log('Successfully parsed JSON from OpenAI response');
     
     // Validate and ensure all required fields are present
     return ideas.map(idea => ({
