@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { BusinessIdeaGenerator } from '@/components/business-idea-generator';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
             </nav>
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <Link href="/sign-in" className="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               Sign In
             </Link>
