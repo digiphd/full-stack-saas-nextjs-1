@@ -6,6 +6,7 @@ import { writeFileSync } from 'fs';
 import path from 'path';
 import { appRouter } from './trpc/router';
 import { createContext } from './trpc/context';
+import founderToolsRoutes from './routes/founder-tools';
 
 // Load environment variables
 dotenv.config();
@@ -30,6 +31,9 @@ app.use(
     createContext,
   })
 );
+
+// REST API routes
+app.use('/api/founder-tools', founderToolsRoutes);
 
 // Generate OpenAPI schema
 // Simplify OpenAPI generation for development

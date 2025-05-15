@@ -40,35 +40,93 @@ export default function Home() {
         </div>
       </header>
       <main className="flex-1">
-        {/* Hero Section with gradient background */}
-        <section className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-400 dark:bg-purple-700 rounded-full filter blur-3xl opacity-20"></div>
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400 dark:bg-blue-700 rounded-full filter blur-3xl opacity-20"></div>
+        {/* Hero Section with enhanced grid pattern and geometric shapes */}
+        <section className="py-32 md:py-40 relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+          <div className="absolute inset-0">
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0iIzIwNEZCNSIgc3Ryb2tlLXdpZHRoPSIwLjUiPjxwYXRoIGQ9Ik0zNiAxOGgxOHYxOGgtMThWMTh6Ii8+PHBhdGggZD0iTTE4IDE4aDE4djE4SDE4VjE4eiIvPjxwYXRoIGQ9Ik0wIDE4aDE4djE4SDBWMTh6Ii8+PHBhdGggZD0iTTM2IDBoMTh2MThIMzZWMHoiLz48cGF0aCBkPSJNMTggMGgxOHYxOEgxOFYweiIvPjxwYXRoIGQ9Ik0wIDBoMTh2MThIMFYweiIvPjxwYXRoIGQ9Ik0zNiAzNmgxOHYxOGgtMThWMzZ6Ii8+PHBhdGggZD0iTTE4IDM2aDE4djE4SDE4VjM2eiIvPjxwYXRoIGQ9Ik0wIDM2aDE4djE4SDBWMzZ6Ii8+PC9nPjwvZz48L3N2Zz4=')]  opacity-[0.07] dark:opacity-[0.05]"></div>
+            
+            {/* Geometric shapes */}
+            <div className="absolute top-20 right-[10%] w-24 h-24 bg-blue-500 dark:bg-blue-600 rounded-lg rotate-12 filter blur-xl opacity-20"></div>
+            <div className="absolute top-40 left-[15%] w-16 h-16 bg-purple-500 dark:bg-purple-600 rounded-full filter blur-xl opacity-20"></div>
+            <div className="absolute bottom-20 right-[20%] w-32 h-32 bg-indigo-500 dark:bg-indigo-600 rounded-xl rotate-45 filter blur-xl opacity-20"></div>
+            <div className="absolute -bottom-10 left-[25%] w-40 h-40 bg-blue-400 dark:bg-blue-700 rounded-full filter blur-3xl opacity-20"></div>
+            
+            {/* Accent lines */}
+            <div className="absolute top-[20%] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-700 to-transparent opacity-30"></div>
+            <div className="absolute bottom-[30%] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-300 dark:via-purple-700 to-transparent opacity-30"></div>
           </div>
           
           <div className="container relative flex flex-col items-center text-center z-10">
-            <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-blue-800 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+            <div className="inline-block px-3 py-1 mb-8 text-sm font-medium text-blue-800 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/30 rounded-full">
               ✨ AI-Powered Business Solutions
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
               Transform Ideas Into Reality with AI
             </h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mb-10">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mb-14">
               Launch your AI-powered SaaS in record time with our production-ready, fully-featured starter template.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-6">
               <Link href="/sign-up">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-10 py-7 text-lg font-medium shadow-lg hover:shadow-xl transition-all">
                   Start Building
                 </Button>
               </Link>
               <Link href="/docs">
-                <Button variant="outline" size="lg" className="border-2 border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 px-8 py-6 text-lg">
+                <Button variant="outline" size="lg" className="border-2 border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 px-10 py-7 text-lg font-medium">
                   View Documentation
                 </Button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Feature Showcase */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-950 dark:to-blue-950 opacity-80"></div>
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full filter blur-3xl opacity-20"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-300 dark:bg-purple-700 rounded-full filter blur-3xl opacity-20"></div>
+          
+          <div className="container relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-indigo-800 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
+                  🚀 Founder Success Tool
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400">
+                  MVP SaaS Idea Generator For Your First 6-Figure Exit
+                </h2>
+                <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
+                  Discover high-potential SaaS ideas optimized for acquisition. Our AI analyzes market trends, implementation complexity, and exit multiples to identify opportunities with the best chance of a successful 6-figure exit.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {[
+                    'Discover SaaS ideas with high acquisition potential',
+                    'Analyze market trends and exit multiples',
+                    'Estimate time-to-MVP and implementation complexity',
+                    'Identify optimal revenue models for faster growth',
+                    'Focus on ideas with 3-8x ARR exit potential'
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/dashboard/founder-tools/idea-generator">
+                  <Button className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0 px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all">
+                    Generate SaaS Ideas
+                  </Button>
+                </Link>
+              </div>
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 border border-blue-100 dark:border-blue-900">
+                <BusinessIdeaGenerator />
+              </div>
             </div>
           </div>
         </section>
@@ -153,61 +211,6 @@ export default function Home() {
                   Track user behavior and product usage with PostHog analytics for data-driven decisions.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* AI Feature Showcase */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-950 dark:to-blue-950 opacity-80"></div>
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full filter blur-3xl opacity-20"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-300 dark:bg-purple-700 rounded-full filter blur-3xl opacity-20"></div>
-          
-          <div className="container relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-indigo-800 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
-                  🚀 Founder Success Tool
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400">
-                  MVP SaaS Idea Generator For Your First 6-Figure Exit
-                </h2>
-                <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-                  Discover high-potential SaaS ideas optimized for acquisition. Our AI analyzes market trends, implementation complexity, and exit multiples to identify opportunities with the best chance of a successful 6-figure exit.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {[
-                    'Discover SaaS ideas with high acquisition potential',
-                    'Analyze market trends and exit multiples',
-                    'Estimate time-to-MVP and implementation complexity',
-                    'Identify optimal revenue models for faster growth',
-                    'Focus on ideas with 3-8x ARR exit potential'
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/sign-up">
-                    <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all">
-                      Try It Free
-                    </Button>
-                  </Link>
-                  <Link href="/features">
-                    <Button variant="outline" size="lg" className="border-2 border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-              {/* Import and use the BusinessIdeaGenerator component */}
-              <BusinessIdeaGenerator />
             </div>
           </div>
         </section>

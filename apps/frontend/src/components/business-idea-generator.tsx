@@ -2,17 +2,9 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { founderToolsApi, type BusinessIdea } from '@/lib/api';
 
-interface BusinessIdea {
-  title: string;
-  description: string;
-  score: number;
-  marketPotential: string;
-  implementationDifficulty: string;
-  timeToMvp: string;
-  revenueModel: string;
-  exitMultiple: string;
-}
+// BusinessIdea type is now imported from @/lib/api
 
 export function BusinessIdeaGenerator() {
   const [userInput, setUserInput] = useState('');
@@ -32,20 +24,9 @@ export function BusinessIdeaGenerator() {
     setError('');
     
     try {
-      const response = await fetch('/api/generate-business-idea', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userInput }),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to generate ideas');
-      }
-      
-      const data = await response.json();
-      setIdeas(data.ideas);
+      // Use our unified API client to generate business ideas
+      const ideas = await founderToolsApi.generateBusinessIdeas(userInput, 3);
+      setIdeas(ideas);
     } catch (err) {
       setError('Something went wrong. Please try again.');
       console.error(err);

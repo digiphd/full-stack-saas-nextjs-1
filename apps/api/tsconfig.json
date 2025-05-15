@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2020",
     "module": "commonjs",
-    "lib": ["es2017", "esnext.asynciterable"],
+    "lib": ["es2020", "esnext.asynciterable"],
     "declaration": true,
     "sourceMap": true,
     "outDir": "./dist",

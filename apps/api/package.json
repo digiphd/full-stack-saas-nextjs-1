@@ -10,6 +10,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.3.0",
     "@clerk/clerk-sdk-node": "^4.12.2",
     "@saas-starter/types": "*",
     "@saas-starter/utils": "*",
@@ -18,11 +19,11 @@
     "dotenv": "^16.3.1",
     "drizzle-orm": "^0.28.6",
     "express": "^4.18.2",
+    "openai": "^4.98.0",
     "postgres": "^3.3.5",
     "resend": "^1.1.0",
     "superjson": "^1.13.1",
-    "zod": "^3.22.2",
-    "@asteasolutions/zod-to-openapi": "^7.3.0"
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.14",

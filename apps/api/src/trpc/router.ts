@@ -2,6 +2,7 @@ import { initTRPC, TRPCError } from '@trpc/server';
 import { z } from 'zod';
 import superjson from 'superjson';
 import { Context } from './context';
+import { generateBusinessIdeas } from '../services/openai';
 
 // Initialize tRPC
 const t = initTRPC.context<Context>().create({
@@ -35,6 +36,30 @@ export const appRouter: any = router({
   // Public procedures
   health: publicProcedure.query(() => {
     return { status: 'ok', timestamp: new Date() };
+  }),
+  
+  // Founder tools procedures
+  founderTools: router({
+    generateBusinessIdeas: publicProcedure
+      .input(
+        z.object({
+          userInput: z.string(),
+          count: z.number().min(1).max(5).default(3),
+        })
+      )
+      .mutation(async ({ input }) => {
+        try {
+          const ideas = await generateBusinessIdeas(input.userInput, input.count);
+          return { ideas };
+        } catch (error) {
+          console.error('Error generating business ideas:', error);
+          throw new TRPCError({
+            code: 'INTERNAL_SERVER_ERROR',
+            message: 'Failed to generate business ideas',
+            cause: error,
+          });
+        }
+      }),
   }),
   
   // User procedures
