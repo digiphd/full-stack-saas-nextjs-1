@@ -5,7 +5,9 @@ A Monorepo B2B SaaS starter template for AI-powered microservices.
 > **Implementation Note**: This is a starter template with some components fully implemented and others in various stages of implementation. See the "Current Implementation Status" section for details.
 
 
-![Full Demo Walkthrough Gif](./demo/demo.gif)
+<p align="center">
+  <img src="./demo/demo.gif" alt="Full Demo Walkthrough Gif">
+</p>
 
 ## 🚀 Features
 
@@ -109,7 +111,9 @@ For a detailed list of planned improvements and remaining work items, please see
 
 This template includes a working example of OpenAI integration with the SaaS Idea Generator on the Home Page.
 
-![AI Feature Demo](./demo/ai_feature.gif)
+<p align="center">
+  <img src="./demo/ai_feature.gif" alt="AI Feature Demo">
+</p>
 
 The example demonstrates:
 - Integration with OpenAI's API
