@@ -1,0 +1,187 @@
+# Product Requirements Document (PRD)
+
+## Project Overview
+
+**Project Name:** Full-Stack SaaS Starter Kit  
+**Version:** 1.0  
+**Last Updated:** May 16, 2025  
+
+### Purpose
+
+This PRD template serves as a guide for developers integrating with AI tools like Claude and Tempo Labs. It outlines the project requirements, architecture, and provides instructions on what to modify when building your own SaaS application.
+
+## Product Description
+
+The Full-Stack SaaS Starter Kit is a comprehensive monorepo template for building B2B SaaS applications with AI capabilities. It includes:
+
+1. **Frontend** (Next.js): Marketing pages, authentication, dashboard UI
+2. **Backend API** (Express + tRPC): Type-safe API endpoints with OpenAPI generation
+3. **Database** (Neon Postgres + Drizzle ORM): Cloud-native database with type-safe ORM
+4. **CMS** (Directus): Content management for blog and marketing content
+5. **Async Workflows** (Upstash): Background processing for AI tasks and emails
+6. **Authentication** (Clerk): User management with organization support
+7. **Documentation** (Scalar): API documentation generated from OpenAPI specs
+
+## Technical Requirements
+
+### Frontend Requirements
+
+- **Framework**: Next.js 14+ with App Router
+- **UI Components**: Tailwind CSS + ShadCN UI
+- **State Management**: React Context + Hooks
+- **Authentication**: Clerk.js integration
+- **Theme Support**: Light/dark mode with system preference detection
+- **Responsive Design**: Mobile-first approach for all pages
+
+### Backend Requirements
+
+- **API Framework**: Express.js with tRPC for type-safe endpoints
+- **Validation**: Zod for schema validation
+- **Documentation**: OpenAPI schema generation with Scalar
+- **Authentication**: JWT validation with Clerk
+- **Error Handling**: Standardized error responses
+
+### Database Requirements
+
+- **Database**: PostgreSQL (Neon)
+- **ORM**: Drizzle with migration support
+- **Schema**: Type-safe schema definitions
+- **Relationships**: Proper foreign key relationships
+
+### Integration Requirements
+
+- **CMS**: Directus for content management
+- **Email**: Resend for transactional emails
+- **Analytics**: PostHog for user behavior tracking
+- **AI**: OpenAI for content generation
+- **Async Processing**: Upstash for background jobs
+
+## User Flows
+
+### Authentication Flow
+
+1. User visits marketing site
+2. User clicks "Sign Up" or "Login"
+3. User is redirected to Clerk authentication
+4. After successful authentication, user is redirected to dashboard
+
+### Content Creation Flow
+
+1. Admin logs into Directus CMS
+2. Admin creates/edits content
+3. Content is published
+4. Webhooks trigger revalidation of content on frontend
+
+### AI Processing Flow
+
+1. User submits request requiring AI processing
+2. Request is validated and queued
+3. Background worker processes the request
+4. Results are stored in database
+5. User is notified when processing is complete
+
+## Customization Guide
+
+### What to Change
+
+When adapting this template for your own SaaS application, focus on modifying these key areas:
+
+#### 1. Branding and Content
+
+- **Logo**: Replace logo files in `/apps/frontend/public/`
+- **Colors**: Modify theme colors in `/apps/frontend/src/styles/globals.css`
+- **Marketing Copy**: Update content in marketing pages at `/apps/frontend/src/app/(marketing)/`
+
+#### 2. Database Schema
+
+- **Models**: Define your business models in `/apps/api/src/db/schema/`
+- **Migrations**: Create migrations for your schema changes
+- **Seeds**: Add seed data for development in `/apps/api/src/db/seed/`
+
+#### 3. API Endpoints
+
+- **Routes**: Add your API routes in `/apps/api/src/routes/`
+- **Services**: Implement business logic in `/apps/api/src/services/`
+- **Validation**: Define Zod schemas in `/packages/types/src/`
+
+#### 4. AI Integration
+
+- **Prompts**: Customize AI prompts in `/apps/api/src/services/openai.ts`
+- **Workflows**: Define async workflows in `/apps/workflows/src/handlers/`
+- **Models**: Choose appropriate AI models for your use case
+
+#### 5. Authentication
+
+- **Permissions**: Configure role-based access in `/apps/api/src/middleware/auth.ts`
+- **Organization**: Set up organization/team structure in Clerk dashboard
+- **Protected Routes**: Update route protection in frontend and API
+
+### Integration with AI Tools
+
+#### Claude Integration
+
+When using Claude for code generation or modifications:
+
+1. Share this PRD to provide context about the project structure
+2. Specify which components you want Claude to modify
+3. Provide clear instructions on the desired functionality
+4. Reference existing patterns in the codebase for consistency
+
+Example prompt:
+```
+I'm working with the Full-Stack SaaS Starter Kit and need to add a new feature for [description]. 
+Based on the PRD, I need to modify:
+1. The database schema to add [model details]
+2. Create API endpoints for [functionality]
+3. Add UI components for [description]
+
+Please help me implement this following the existing patterns in the codebase.
+```
+
+#### Tempo Labs Integration
+
+When using Tempo Labs for workflow automation:
+
+1. Reference this PRD to understand the project architecture
+2. Focus on the async workflow components
+3. Use the existing patterns for job processing
+4. Ensure proper error handling and retries
+
+Example configuration:
+```yaml
+name: SaaS Starter Integration
+source: full-stack-saas-starter
+triggers:
+  - event: content.created
+    action: revalidate-content
+workflows:
+  - name: ai-processing
+    steps:
+      - service: openai
+        action: generate
+      - service: database
+        action: store-results
+      - service: notification
+        action: notify-user
+```
+
+## Success Metrics
+
+When implementing your SaaS application using this starter kit, consider these key metrics:
+
+1. **Development Speed**: Time to implement core features
+2. **Code Quality**: Maintainability and test coverage
+3. **Performance**: Page load times and API response times
+4. **User Experience**: Conversion rates and user satisfaction
+5. **Scalability**: Ability to handle increasing load
+
+## Additional Resources
+
+- [README.md](/README.md): Getting started guide
+- [TODO.md](/TODO.md): Planned improvements
+- [CONTRIBUTING.md](/CONTRIBUTING.md): Contribution guidelines
+- [LICENSE](/LICENSE): License information
+
+---
+
+*This PRD template is designed to be modified for your specific SaaS application needs. Replace sections as appropriate for your project requirements.*

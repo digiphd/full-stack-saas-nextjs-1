@@ -135,6 +135,16 @@ After CMS updates, trigger revalidation (once CMS integration is complete):
 curl -X POST https://app.yourdomain.com/api/revalidate?secret=your_secret&path=/blog/your-post-slug
 ```
 
+## 📃 Product Requirements Document
+
+This project includes a PRD template (`PRD.md.example`) to help you customize the starter kit for your specific needs. When integrating with AI tools like Claude or Tempo Labs:
+
+1. Copy `PRD.md.example` to `PRD.md`
+2. Customize the PRD with your specific project details
+3. Use the PRD to provide context when working with AI tools
+
+The template includes sections on technical requirements, customization points, and example prompts for AI integration.
+
 ## 👥 Contributing
 
 Contributions to this project are managed through a controlled process. Please read our [CONTRIBUTING.md](/CONTRIBUTING.md) file for details on how to request access to contribute.

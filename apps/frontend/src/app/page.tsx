@@ -61,13 +61,13 @@ export default function Home() {
           
           <div className="container relative flex flex-col items-center text-center z-10">
             <div className="inline-block px-3 py-1 mb-8 text-sm font-medium text-blue-800 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/30 rounded-full">
-              ✨ AI-Powered Business Solutions
+              ✨ B2B SaaS Template
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              Transform Ideas Into Reality with AI
+              Jumpstart Your AI-Powered SaaS Development
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mb-14">
-              Launch your AI-powered SaaS in record time with our production-ready, fully-featured starter template.
+              A template with Next.js, Express, Postgres, and AI integrations. Skip the initial setup and focus on building your unique features.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link href="/sign-up">
@@ -94,21 +94,21 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-indigo-800 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
-                  🚀 Founder Success Tool
+                  🤖 AI Example Feature
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400">
-                  MVP SaaS Idea Generator For Your First 6-Figure Exit
+                  SaaS Idea Generator with OpenAI
                 </h2>
                 <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-                  Discover high-potential SaaS ideas optimized for acquisition. Our AI analyzes market trends, implementation complexity, and exit multiples to identify opportunities with the best chance of a successful 6-figure exit.
+                  Example integration with OpenAI's API. This feature demonstrates how to connect your SaaS application to AI services for generating content based on user input.
                 </p>
                 <ul className="space-y-4 mb-8">
                   {[
-                    'Discover SaaS ideas with high acquisition potential',
-                    'Analyze market trends and exit multiples',
-                    'Estimate time-to-MVP and implementation complexity',
-                    'Identify optimal revenue models for faster growth',
-                    'Focus on ideas with 3-8x ARR exit potential'
+                    'Demonstrates OpenAI API integration with Express backend',
+                    'Shows how to handle API keys securely with environment variables',
+                    'Implements error handling and fallback mechanisms',
+                    'Provides examples of input validation with Zod',
+                    'Showcases frontend-to-backend communication patterns'
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 mr-3">
